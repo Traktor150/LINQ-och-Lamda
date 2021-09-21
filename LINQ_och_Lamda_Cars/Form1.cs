@@ -22,6 +22,8 @@ namespace LINQ_och_Lamda_Cars
             btn_AmountCollor.Text = "Amount of Red cars.";
             btn_Age.Text = "Amount of cars older than 2003.";
             btn_GrayVolvo.Text = "Amount of Grey Volvos.";
+            btn_DriveDistanse.Text = "Snitsträckan för BMW bilar.";
+            btn_MostExpensive.Text = "The most expensive car is.";
 
             Cars = new List<Car>();
 
@@ -72,13 +74,53 @@ namespace LINQ_och_Lamda_Cars
 
         private void btn_GrayVolvo_Click(object sender, EventArgs e)
         {
-            int amount = Cars.Count(x => (x.Color == "Grey" && x.Make == "Volvo"));
+            int amount = Cars.Count(x => x.Color == "Grey" && x.Make == "Volvo");
             lib_Kvitto.Items.Add($"You have {amount} Grey Volvos.");
+        }
+
+        private void btn_DriveDistanse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int distanse = 0;
+                int amount = 0;
+                int average = 0;
+                foreach (var item in Cars)
+                {
+                    if (item.Make == "BMW")
+                    {
+                        distanse += item.Km;
+                        amount++;
+                    }
+                }
+
+                average = distanse / amount;
+                lib_Kvitto.Items.Add($"Average distance for BMW are {average}.");
+            }
+            catch (Exception)// Försök att hindra popp upp om dividering med noll (mislyckades). 
+            {
+                lib_Kvitto.Items.Add("You have no BMW to get data from.");
+                throw;
+            }
+        }
+
+        private void btn_MostExpensive_Click(object sender, EventArgs e)
+        {
+            int expensiveIndex = 0;
+            for (int i = 0; i < Cars.Count; i++)
+            {
+                if (Cars[expensiveIndex].Price < Cars[i].Price)
+                {
+                    expensiveIndex = i;
+                }
+            }
+            lib_Kvitto.Items.Add($"The moste expensive car is a {Cars[expensiveIndex].Make} {Cars[expensiveIndex].Model}, " +
+                                 $"{Cars[expensiveIndex].Color} for {Cars[expensiveIndex].Price}kr.");
         }
     }
 
 
-    public class Car 
+    public class Car
     {
         public int Id { get; set; }
         public string Make { get; set; }

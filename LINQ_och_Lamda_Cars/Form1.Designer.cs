@@ -34,6 +34,8 @@ namespace LINQ_och_Lamda_Cars
             this.btn_AmountCollor = new System.Windows.Forms.Button();
             this.btn_Age = new System.Windows.Forms.Button();
             this.btn_GrayVolvo = new System.Windows.Forms.Button();
+            this.btn_DriveDistanse = new System.Windows.Forms.Button();
+            this.btn_MostExpensive = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lib_CarList
@@ -49,9 +51,9 @@ namespace LINQ_och_Lamda_Cars
             // 
             this.lib_Kvitto.FormattingEnabled = true;
             this.lib_Kvitto.ItemHeight = 16;
-            this.lib_Kvitto.Location = new System.Drawing.Point(54, 363);
+            this.lib_Kvitto.Location = new System.Drawing.Point(54, 379);
             this.lib_Kvitto.Name = "lib_Kvitto";
-            this.lib_Kvitto.Size = new System.Drawing.Size(481, 148);
+            this.lib_Kvitto.Size = new System.Drawing.Size(481, 132);
             this.lib_Kvitto.TabIndex = 1;
             // 
             // btn_AmountCollor
@@ -84,18 +86,39 @@ namespace LINQ_och_Lamda_Cars
             this.btn_GrayVolvo.UseVisualStyleBackColor = true;
             this.btn_GrayVolvo.Click += new System.EventHandler(this.btn_GrayVolvo_Click);
             // 
+            // btn_DriveDistanse
+            // 
+            this.btn_DriveDistanse.Location = new System.Drawing.Point(54, 319);
+            this.btn_DriveDistanse.Name = "btn_DriveDistanse";
+            this.btn_DriveDistanse.Size = new System.Drawing.Size(162, 35);
+            this.btn_DriveDistanse.TabIndex = 5;
+            this.btn_DriveDistanse.Text = "button1";
+            this.btn_DriveDistanse.UseVisualStyleBackColor = true;
+            this.btn_DriveDistanse.Click += new System.EventHandler(this.btn_DriveDistanse_Click);
+            // 
+            // btn_MostExpensive
+            // 
+            this.btn_MostExpensive.Location = new System.Drawing.Point(243, 319);
+            this.btn_MostExpensive.Name = "btn_MostExpensive";
+            this.btn_MostExpensive.Size = new System.Drawing.Size(157, 35);
+            this.btn_MostExpensive.TabIndex = 6;
+            this.btn_MostExpensive.Text = "button1";
+            this.btn_MostExpensive.UseVisualStyleBackColor = true;
+            this.btn_MostExpensive.Click += new System.EventHandler(this.btn_MostExpensive_Click);
+            // 
             // Car_Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 550);
+            this.Controls.Add(this.btn_MostExpensive);
+            this.Controls.Add(this.btn_DriveDistanse);
             this.Controls.Add(this.btn_GrayVolvo);
             this.Controls.Add(this.btn_Age);
             this.Controls.Add(this.btn_AmountCollor);
             this.Controls.Add(this.lib_Kvitto);
             this.Controls.Add(this.lib_CarList);
             this.Name = "Car_Tracker";
-            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -107,6 +130,8 @@ namespace LINQ_och_Lamda_Cars
         private System.Windows.Forms.Button btn_AmountCollor;
         private System.Windows.Forms.Button btn_Age;
         private System.Windows.Forms.Button btn_GrayVolvo;
+        private System.Windows.Forms.Button btn_DriveDistanse;
+        private System.Windows.Forms.Button btn_MostExpensive;
     }
 }
 
