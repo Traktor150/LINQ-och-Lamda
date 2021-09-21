@@ -30,22 +30,45 @@ namespace LINQ_och_Lamda_Cars
         private void InitializeComponent()
         {
             this.lib_CarList = new System.Windows.Forms.ListBox();
+            this.lib_Kvitto = new System.Windows.Forms.ListBox();
+            this.btn_AmountCollor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lib_CarList
             // 
             this.lib_CarList.FormattingEnabled = true;
             this.lib_CarList.ItemHeight = 16;
-            this.lib_CarList.Location = new System.Drawing.Point(176, 12);
+            this.lib_CarList.Location = new System.Drawing.Point(54, 12);
             this.lib_CarList.Name = "lib_CarList";
-            this.lib_CarList.Size = new System.Drawing.Size(437, 212);
+            this.lib_CarList.Size = new System.Drawing.Size(312, 212);
             this.lib_CarList.TabIndex = 0;
+            // 
+            // lib_Kvitto
+            // 
+            this.lib_Kvitto.FormattingEnabled = true;
+            this.lib_Kvitto.ItemHeight = 16;
+            this.lib_Kvitto.Location = new System.Drawing.Point(434, 362);
+            this.lib_Kvitto.Name = "lib_Kvitto";
+            this.lib_Kvitto.Size = new System.Drawing.Size(270, 148);
+            this.lib_Kvitto.TabIndex = 1;
+            // 
+            // btn_AmountCollor
+            // 
+            this.btn_AmountCollor.Location = new System.Drawing.Point(54, 313);
+            this.btn_AmountCollor.Name = "btn_AmountCollor";
+            this.btn_AmountCollor.Size = new System.Drawing.Size(89, 44);
+            this.btn_AmountCollor.TabIndex = 2;
+            this.btn_AmountCollor.Text = "button1";
+            this.btn_AmountCollor.UseVisualStyleBackColor = true;
+            this.btn_AmountCollor.Click += new System.EventHandler(this.btn_AmountCollor_Click);
             // 
             // Car_Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 661);
+            this.ClientSize = new System.Drawing.Size(758, 550);
+            this.Controls.Add(this.btn_AmountCollor);
+            this.Controls.Add(this.lib_Kvitto);
             this.Controls.Add(this.lib_CarList);
             this.Name = "Car_Tracker";
             this.Text = "Form1";
@@ -56,6 +79,8 @@ namespace LINQ_och_Lamda_Cars
         #endregion
 
         private System.Windows.Forms.ListBox lib_CarList;
+        private System.Windows.Forms.ListBox lib_Kvitto;
+        private System.Windows.Forms.Button btn_AmountCollor;
     }
 }
 

@@ -19,6 +19,10 @@ namespace LINQ_och_Lamda_Cars
         {
             InitializeComponent();
 
+            btn_AmountCollor.Text = "Amount of Red cars.";
+
+
+
             Cars = new List<Car>();
 
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
@@ -49,12 +53,16 @@ namespace LINQ_och_Lamda_Cars
 
             foreach (var item in Cars)
             {
-                lib_CarList.Items.Add($"{item.Make} {item.Model}, {item.Year}");
+                lib_CarList.Items.Add($"{item.Make}\t{item.Model}\t{item.Year}");
             }
 
         }
 
-
+        private void btn_AmountCollor_Click(object sender, EventArgs e)
+        {
+            int amount = Cars.Count(x => x.Color == "Red");
+            lib_Kvitto.Items.Add($"You have {amount} Red cars.");
+        }
     }
 
 
