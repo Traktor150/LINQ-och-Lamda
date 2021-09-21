@@ -20,7 +20,7 @@ namespace LINQ_och_Lamda_Cars
             InitializeComponent();
 
             btn_AmountCollor.Text = "Amount of Red cars.";
-
+            btn_Age.Text = "Amount of cars older than 2003.";
 
 
             Cars = new List<Car>();
@@ -62,6 +62,12 @@ namespace LINQ_och_Lamda_Cars
         {
             int amount = Cars.Count(x => x.Color == "Red");
             lib_Kvitto.Items.Add($"You have {amount} Red cars.");
+        }
+
+        private void btn_Age_Click(object sender, EventArgs e)
+        {
+            int amount = Cars.Count(x => x.Year < 2003);
+            lib_Kvitto.Items.Add($"You have {amount} cars that wher made before 2003.");
         }
     }
 

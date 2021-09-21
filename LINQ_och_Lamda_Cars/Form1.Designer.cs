@@ -32,6 +32,7 @@ namespace LINQ_och_Lamda_Cars
             this.lib_CarList = new System.Windows.Forms.ListBox();
             this.lib_Kvitto = new System.Windows.Forms.ListBox();
             this.btn_AmountCollor = new System.Windows.Forms.Button();
+            this.btn_Age = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lib_CarList
@@ -47,14 +48,14 @@ namespace LINQ_och_Lamda_Cars
             // 
             this.lib_Kvitto.FormattingEnabled = true;
             this.lib_Kvitto.ItemHeight = 16;
-            this.lib_Kvitto.Location = new System.Drawing.Point(434, 362);
+            this.lib_Kvitto.Location = new System.Drawing.Point(54, 363);
             this.lib_Kvitto.Name = "lib_Kvitto";
-            this.lib_Kvitto.Size = new System.Drawing.Size(270, 148);
+            this.lib_Kvitto.Size = new System.Drawing.Size(444, 148);
             this.lib_Kvitto.TabIndex = 1;
             // 
             // btn_AmountCollor
             // 
-            this.btn_AmountCollor.Location = new System.Drawing.Point(54, 313);
+            this.btn_AmountCollor.Location = new System.Drawing.Point(54, 253);
             this.btn_AmountCollor.Name = "btn_AmountCollor";
             this.btn_AmountCollor.Size = new System.Drawing.Size(89, 44);
             this.btn_AmountCollor.TabIndex = 2;
@@ -62,11 +63,22 @@ namespace LINQ_och_Lamda_Cars
             this.btn_AmountCollor.UseVisualStyleBackColor = true;
             this.btn_AmountCollor.Click += new System.EventHandler(this.btn_AmountCollor_Click);
             // 
+            // btn_Age
+            // 
+            this.btn_Age.Location = new System.Drawing.Point(214, 253);
+            this.btn_Age.Name = "btn_Age";
+            this.btn_Age.Size = new System.Drawing.Size(152, 44);
+            this.btn_Age.TabIndex = 3;
+            this.btn_Age.Text = "button1";
+            this.btn_Age.UseVisualStyleBackColor = true;
+            this.btn_Age.Click += new System.EventHandler(this.btn_Age_Click);
+            // 
             // Car_Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 550);
+            this.ClientSize = new System.Drawing.Size(609, 550);
+            this.Controls.Add(this.btn_Age);
             this.Controls.Add(this.btn_AmountCollor);
             this.Controls.Add(this.lib_Kvitto);
             this.Controls.Add(this.lib_CarList);
@@ -81,6 +93,7 @@ namespace LINQ_och_Lamda_Cars
         private System.Windows.Forms.ListBox lib_CarList;
         private System.Windows.Forms.ListBox lib_Kvitto;
         private System.Windows.Forms.Button btn_AmountCollor;
+        private System.Windows.Forms.Button btn_Age;
     }
 }
 
