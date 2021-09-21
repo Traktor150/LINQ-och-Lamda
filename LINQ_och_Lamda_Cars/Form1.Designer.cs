@@ -33,6 +33,7 @@ namespace LINQ_och_Lamda_Cars
             this.lib_Kvitto = new System.Windows.Forms.ListBox();
             this.btn_AmountCollor = new System.Windows.Forms.Button();
             this.btn_Age = new System.Windows.Forms.Button();
+            this.btn_GrayVolvo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lib_CarList
@@ -50,7 +51,7 @@ namespace LINQ_och_Lamda_Cars
             this.lib_Kvitto.ItemHeight = 16;
             this.lib_Kvitto.Location = new System.Drawing.Point(54, 363);
             this.lib_Kvitto.Name = "lib_Kvitto";
-            this.lib_Kvitto.Size = new System.Drawing.Size(444, 148);
+            this.lib_Kvitto.Size = new System.Drawing.Size(481, 148);
             this.lib_Kvitto.TabIndex = 1;
             // 
             // btn_AmountCollor
@@ -73,11 +74,22 @@ namespace LINQ_och_Lamda_Cars
             this.btn_Age.UseVisualStyleBackColor = true;
             this.btn_Age.Click += new System.EventHandler(this.btn_Age_Click);
             // 
+            // btn_GrayVolvo
+            // 
+            this.btn_GrayVolvo.Location = new System.Drawing.Point(408, 253);
+            this.btn_GrayVolvo.Name = "btn_GrayVolvo";
+            this.btn_GrayVolvo.Size = new System.Drawing.Size(127, 44);
+            this.btn_GrayVolvo.TabIndex = 4;
+            this.btn_GrayVolvo.Text = "button1";
+            this.btn_GrayVolvo.UseVisualStyleBackColor = true;
+            this.btn_GrayVolvo.Click += new System.EventHandler(this.btn_GrayVolvo_Click);
+            // 
             // Car_Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 550);
+            this.Controls.Add(this.btn_GrayVolvo);
             this.Controls.Add(this.btn_Age);
             this.Controls.Add(this.btn_AmountCollor);
             this.Controls.Add(this.lib_Kvitto);
@@ -94,6 +106,7 @@ namespace LINQ_och_Lamda_Cars
         private System.Windows.Forms.ListBox lib_Kvitto;
         private System.Windows.Forms.Button btn_AmountCollor;
         private System.Windows.Forms.Button btn_Age;
+        private System.Windows.Forms.Button btn_GrayVolvo;
     }
 }
 
