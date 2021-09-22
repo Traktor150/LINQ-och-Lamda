@@ -17,6 +17,11 @@ namespace CarsForm2._0
         {
             InitializeComponent();
 
+            // Hindra att det kommer in otilåtna tecken
+            txb_Id.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_EditPrise.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_EditKm.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+
             // Sätter in data
             Cars = new List<Car>();
 
@@ -120,9 +125,6 @@ namespace CarsForm2._0
 
         private void btn_SaveEdit_Click(object sender, EventArgs e)
         {
-            //Car testbil = Cars.Find(x => x.Id == int.Parse(txb_Id.Text));
-            //MessageBox.Show(testbil.Make);
-
             Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Price = int.Parse(txb_EditPrise.Text);
 
             Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Km = int.Parse(txb_EditKm.Text);
@@ -139,6 +141,17 @@ namespace CarsForm2._0
 
             txb_EditPrise.Enabled = false;
             txb_EditKm.Enabled = false;
+        }
+
+        private void KeyPress_OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                if ((short)e.KeyChar != 8)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }
