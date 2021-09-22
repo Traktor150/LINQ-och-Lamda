@@ -40,6 +40,15 @@ namespace CarsForm2._0
             this.lbl_Year = new System.Windows.Forms.Label();
             this.cmb_Chose = new System.Windows.Forms.ComboBox();
             this.lib_ShowCarsOfColor = new System.Windows.Forms.ListBox();
+            this.lbl_CarEdit = new System.Windows.Forms.Label();
+            this.txb_Id = new System.Windows.Forms.TextBox();
+            this.lbl_EditId = new System.Windows.Forms.Label();
+            this.lbl_EditPrice = new System.Windows.Forms.Label();
+            this.lbl_EditKm = new System.Windows.Forms.Label();
+            this.txb_EditPrise = new System.Windows.Forms.TextBox();
+            this.txb_EditKm = new System.Windows.Forms.TextBox();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_SaveEdit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lib_AllCars
@@ -142,11 +151,96 @@ namespace CarsForm2._0
             this.lib_ShowCarsOfColor.Size = new System.Drawing.Size(145, 116);
             this.lib_ShowCarsOfColor.TabIndex = 10;
             // 
+            // lbl_CarEdit
+            // 
+            this.lbl_CarEdit.AutoSize = true;
+            this.lbl_CarEdit.Location = new System.Drawing.Point(37, 250);
+            this.lbl_CarEdit.Name = "lbl_CarEdit";
+            this.lbl_CarEdit.Size = new System.Drawing.Size(46, 17);
+            this.lbl_CarEdit.TabIndex = 11;
+            this.lbl_CarEdit.Text = "label1";
+            // 
+            // txb_Id
+            // 
+            this.txb_Id.Location = new System.Drawing.Point(229, 287);
+            this.txb_Id.Name = "txb_Id";
+            this.txb_Id.Size = new System.Drawing.Size(76, 22);
+            this.txb_Id.TabIndex = 12;
+            // 
+            // lbl_EditId
+            // 
+            this.lbl_EditId.AutoSize = true;
+            this.lbl_EditId.Location = new System.Drawing.Point(37, 290);
+            this.lbl_EditId.Name = "lbl_EditId";
+            this.lbl_EditId.Size = new System.Drawing.Size(46, 17);
+            this.lbl_EditId.TabIndex = 13;
+            this.lbl_EditId.Text = "label1";
+            // 
+            // lbl_EditPrice
+            // 
+            this.lbl_EditPrice.AutoSize = true;
+            this.lbl_EditPrice.Location = new System.Drawing.Point(69, 323);
+            this.lbl_EditPrice.Name = "lbl_EditPrice";
+            this.lbl_EditPrice.Size = new System.Drawing.Size(46, 17);
+            this.lbl_EditPrice.TabIndex = 14;
+            this.lbl_EditPrice.Text = "label2";
+            // 
+            // lbl_EditKm
+            // 
+            this.lbl_EditKm.AutoSize = true;
+            this.lbl_EditKm.Location = new System.Drawing.Point(69, 352);
+            this.lbl_EditKm.Name = "lbl_EditKm";
+            this.lbl_EditKm.Size = new System.Drawing.Size(46, 17);
+            this.lbl_EditKm.TabIndex = 15;
+            this.lbl_EditKm.Text = "label3";
+            // 
+            // txb_EditPrise
+            // 
+            this.txb_EditPrise.Location = new System.Drawing.Point(229, 318);
+            this.txb_EditPrise.Name = "txb_EditPrise";
+            this.txb_EditPrise.Size = new System.Drawing.Size(100, 22);
+            this.txb_EditPrise.TabIndex = 16;
+            // 
+            // txb_EditKm
+            // 
+            this.txb_EditKm.Location = new System.Drawing.Point(229, 346);
+            this.txb_EditKm.Name = "txb_EditKm";
+            this.txb_EditKm.Size = new System.Drawing.Size(100, 22);
+            this.txb_EditKm.TabIndex = 17;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Location = new System.Drawing.Point(348, 287);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(75, 25);
+            this.btn_Edit.TabIndex = 18;
+            this.btn_Edit.Text = "button1";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            // 
+            // btn_SaveEdit
+            // 
+            this.btn_SaveEdit.Location = new System.Drawing.Point(348, 352);
+            this.btn_SaveEdit.Name = "btn_SaveEdit";
+            this.btn_SaveEdit.Size = new System.Drawing.Size(75, 23);
+            this.btn_SaveEdit.TabIndex = 19;
+            this.btn_SaveEdit.Text = "button1";
+            this.btn_SaveEdit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_SaveEdit);
+            this.Controls.Add(this.btn_Edit);
+            this.Controls.Add(this.txb_EditKm);
+            this.Controls.Add(this.txb_EditPrise);
+            this.Controls.Add(this.lbl_EditKm);
+            this.Controls.Add(this.lbl_EditPrice);
+            this.Controls.Add(this.lbl_EditId);
+            this.Controls.Add(this.txb_Id);
+            this.Controls.Add(this.lbl_CarEdit);
             this.Controls.Add(this.lib_ShowCarsOfColor);
             this.Controls.Add(this.cmb_Chose);
             this.Controls.Add(this.lbl_Year);
@@ -178,6 +272,15 @@ namespace CarsForm2._0
         private System.Windows.Forms.Label lbl_Year;
         private System.Windows.Forms.ComboBox cmb_Chose;
         private System.Windows.Forms.ListBox lib_ShowCarsOfColor;
+        private System.Windows.Forms.Label lbl_CarEdit;
+        private System.Windows.Forms.TextBox txb_Id;
+        private System.Windows.Forms.Label lbl_EditId;
+        private System.Windows.Forms.Label lbl_EditPrice;
+        private System.Windows.Forms.Label lbl_EditKm;
+        private System.Windows.Forms.TextBox txb_EditPrise;
+        private System.Windows.Forms.TextBox txb_EditKm;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_SaveEdit;
     }
 }
 

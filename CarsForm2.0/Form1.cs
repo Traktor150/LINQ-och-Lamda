@@ -17,6 +17,7 @@ namespace CarsForm2._0
         {
             InitializeComponent();
 
+            // Sätter in data
             Cars = new List<Car>();
 
             Cars.Add(new Car() { Id = 1, Make = "Volvo", Model = "V70", Color = "White", Km = 1292, Price = 3465, Year = 1998 });
@@ -42,11 +43,13 @@ namespace CarsForm2._0
             Cars.Add(new Car() { Id = 801, Make = "Audi", Model = "A7", Color = "White", Km = 492, Price = 187500, Year = 2002 });
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
 
+            // Skriver ut Visar data
             foreach (var fiskmas in Cars.OrderBy(x => x.Make))
             {
                 lib_AllCars.Items.Add(fiskmas);
             }
 
+            // där mer data ska visas 
             lbl_Facts.Text = "Fakta för markerad bil:";
             lbl_Id.Text = "Id för bilen är: ";
             lbl_Make.Text = "Tillverkare på bilen: ";
@@ -56,6 +59,7 @@ namespace CarsForm2._0
             lbl_Price.Text = "Priset är: ";
             lbl_Year.Text = "Bilen bygdes år: ";
 
+            // Komboboxen
             cmb_Chose.Text = "Välg färj";
 
             foreach (var Color in Cars.Select(x => x.Color).Distinct())
@@ -63,8 +67,15 @@ namespace CarsForm2._0
                 cmb_Chose.Items.Add(Color);
             }
 
-
-
+            // Ändra Data 
+            lbl_CarEdit.Text = "Redigera bilfakta";
+            lbl_EditId.Text = "Ange Id på bil som ändras:";
+            lbl_EditPrice.Text = "Ändra priset till:";
+            lbl_EditKm.Text = "Ändra sträckan till:";
+            btn_Edit.Text = "Ändra val";
+            btn_SaveEdit.Text = "Spara";
+            txb_EditPrise.Enabled = false;
+            txb_EditKm.Enabled = false;
         }
 
         private void lib_AllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,7 +99,6 @@ namespace CarsForm2._0
 
             string myComboCar = myCombo.SelectedItem as string;
 
-
             lib_ShowCarsOfColor.Items.Clear();
 
             foreach (var Car in Cars.OrderBy(x => x.Make))
@@ -97,8 +107,13 @@ namespace CarsForm2._0
                 {
                     lib_ShowCarsOfColor.Items.Add(Car);
                 }
-
             }
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            txb_EditPrise.Enabled = true;
+            txb_EditKm.Enabled = true;
         }
     }
 }
