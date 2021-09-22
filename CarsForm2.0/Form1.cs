@@ -56,6 +56,15 @@ namespace CarsForm2._0
             lbl_Price.Text = "Priset är: ";
             lbl_Year.Text = "Bilen bygdes år: ";
 
+            cmb_Chose.Text = "Välg färj";
+
+            foreach (var Color in Cars.Select(x => x.Color).Distinct())
+            {
+                cmb_Chose.Items.Add(Color);
+            }
+
+
+
         }
 
         private void lib_AllCars_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,10 +80,25 @@ namespace CarsForm2._0
             lbl_Km.Text = $"Bilen har kört: {mySelektedCar.Km}";
             lbl_Price.Text = $"Priset är: {mySelektedCar.Price}";
             lbl_Year.Text = $"Bilen bygdes år: {mySelektedCar.Year}";
+        }
 
-            
+        private void cmb_Chose_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox myCombo = sender as ComboBox;
+
+            string myComboCar = myCombo.SelectedItem as string;
 
 
+            lib_ShowCarsOfColor.Items.Clear();
+
+            foreach (var Car in Cars.OrderBy(x => x.Make))
+            {
+                if (Car.Color == myComboCar)
+                {
+                    lib_ShowCarsOfColor.Items.Add(Car);
+                }
+
+            }
         }
     }
 }

@@ -38,6 +38,8 @@ namespace CarsForm2._0
             this.lbl_Km = new System.Windows.Forms.Label();
             this.lbl_Price = new System.Windows.Forms.Label();
             this.lbl_Year = new System.Windows.Forms.Label();
+            this.cmb_Chose = new System.Windows.Forms.ComboBox();
+            this.lib_ShowCarsOfColor = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lib_AllCars
@@ -122,11 +124,31 @@ namespace CarsForm2._0
             this.lbl_Year.TabIndex = 8;
             this.lbl_Year.Text = "label1";
             // 
+            // cmb_Chose
+            // 
+            this.cmb_Chose.FormattingEnabled = true;
+            this.cmb_Chose.Location = new System.Drawing.Point(440, 30);
+            this.cmb_Chose.Name = "cmb_Chose";
+            this.cmb_Chose.Size = new System.Drawing.Size(145, 24);
+            this.cmb_Chose.TabIndex = 9;
+            this.cmb_Chose.SelectedIndexChanged += new System.EventHandler(this.cmb_Chose_SelectedIndexChanged);
+            // 
+            // lib_ShowCarsOfColor
+            // 
+            this.lib_ShowCarsOfColor.FormattingEnabled = true;
+            this.lib_ShowCarsOfColor.ItemHeight = 16;
+            this.lib_ShowCarsOfColor.Location = new System.Drawing.Point(440, 94);
+            this.lib_ShowCarsOfColor.Name = "lib_ShowCarsOfColor";
+            this.lib_ShowCarsOfColor.Size = new System.Drawing.Size(145, 116);
+            this.lib_ShowCarsOfColor.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lib_ShowCarsOfColor);
+            this.Controls.Add(this.cmb_Chose);
             this.Controls.Add(this.lbl_Year);
             this.Controls.Add(this.lbl_Price);
             this.Controls.Add(this.lbl_Km);
@@ -154,6 +176,8 @@ namespace CarsForm2._0
         private System.Windows.Forms.Label lbl_Km;
         private System.Windows.Forms.Label lbl_Price;
         private System.Windows.Forms.Label lbl_Year;
+        private System.Windows.Forms.ComboBox cmb_Chose;
+        private System.Windows.Forms.ListBox lib_ShowCarsOfColor;
     }
 }
 
