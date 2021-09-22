@@ -3,6 +3,17 @@
 Ger error om textboxarna är tomma när man sparar. 
 	Kolla om textboxarna är tomma och om dom är sätt markören. 
 
+	Id box
+		När man trycker edit om Id inte är ifylt sätt markören där 
+		Om det fortfarande inte är ifylt när Spara blir trykt så ge en poppup och spara inte
+
+	Pris box och Km box
+		Om en av dom inte är ifyld så spara bara inteför den som inte är ifyld.
+
+Om id man anget inte fins får man ett error medelande. 
+
+
+
 Ger error om det inte är sifror i textboxarna. 
 	Kan lösa om genom intersept på ingående täcken.     Fixat
 
