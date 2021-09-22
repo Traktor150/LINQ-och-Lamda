@@ -48,6 +48,7 @@ namespace CarsForm2._0
             this.lib_AllCars.Name = "lib_AllCars";
             this.lib_AllCars.Size = new System.Drawing.Size(166, 180);
             this.lib_AllCars.TabIndex = 0;
+            this.lib_AllCars.SelectedIndexChanged += new System.EventHandler(this.lib_AllCars_SelectedIndexChanged);
             // 
             // lbl_Facts
             // 
@@ -75,7 +76,6 @@ namespace CarsForm2._0
             this.lbl_Make.Size = new System.Drawing.Size(46, 17);
             this.lbl_Make.TabIndex = 3;
             this.lbl_Make.Text = "label3";
-            this.lbl_Make.Click += new System.EventHandler(this.label3_Click);
             // 
             // lbl_Model
             // 
@@ -94,7 +94,6 @@ namespace CarsForm2._0
             this.lbl_Color.Size = new System.Drawing.Size(46, 17);
             this.lbl_Color.TabIndex = 5;
             this.lbl_Color.Text = "label5";
-            this.lbl_Color.Click += new System.EventHandler(this.label5_Click);
             // 
             // lbl_Km
             // 

@@ -47,17 +47,33 @@ namespace CarsForm2._0
                 lib_AllCars.Items.Add(fiskmas);
             }
 
-
+            lbl_Facts.Text = "Fakta för markerad bil:";
+            lbl_Id.Text = "Id för bilen är: ";
+            lbl_Make.Text = "Tillverkare på bilen: ";
+            lbl_Model.Text = "Modellen är: ";
+            lbl_Color.Text = "Färjen på bilen är: ";
+            lbl_Km.Text = "Bilen har kört: ";
+            lbl_Price.Text = "Priset är: ";
+            lbl_Year.Text = "Bilen bygdes år: ";
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void lib_AllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ListBox myListOfCars = sender as ListBox;
 
-        }
+            Car mySelektedCar = myListOfCars.SelectedItem as Car;
 
-        private void label5_Click(object sender, EventArgs e)
-        {
+            lbl_Id.Text = $"Id för bilen är: {mySelektedCar.Id}";
+            lbl_Make.Text = $"Tillverkare på bilen: {mySelektedCar.Make}";
+            lbl_Model.Text = $"Modellen är: {mySelektedCar.Model}";
+            lbl_Color.Text = $"Färjen på bilen är: {mySelektedCar.Color}";
+            lbl_Km.Text = $"Bilen har kört: {mySelektedCar.Km}";
+            lbl_Price.Text = $"Priset är: {mySelektedCar.Price}";
+            lbl_Year.Text = $"Bilen bygdes år: {mySelektedCar.Year}";
+
+            
+
 
         }
     }
