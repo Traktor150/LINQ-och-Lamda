@@ -226,6 +226,7 @@ namespace CarsForm2._0
             this.btn_SaveEdit.TabIndex = 19;
             this.btn_SaveEdit.Text = "button1";
             this.btn_SaveEdit.UseVisualStyleBackColor = true;
+            this.btn_SaveEdit.Click += new System.EventHandler(this.btn_SaveEdit_Click);
             // 
             // Form1
             // 

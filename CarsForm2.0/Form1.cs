@@ -88,7 +88,7 @@ namespace CarsForm2._0
             lbl_Make.Text = $"Tillverkare på bilen: {mySelektedCar.Make}";
             lbl_Model.Text = $"Modellen är: {mySelektedCar.Model}";
             lbl_Color.Text = $"Färjen på bilen är: {mySelektedCar.Color}";
-            lbl_Km.Text = $"Bilen har kört: {mySelektedCar.Km}";
+            lbl_Km.Text = $"Bilen har kört: {mySelektedCar.Km} km";
             lbl_Price.Text = $"Priset är: {mySelektedCar.Price}";
             lbl_Year.Text = $"Bilen bygdes år: {mySelektedCar.Year}";
         }
@@ -114,6 +114,31 @@ namespace CarsForm2._0
         {
             txb_EditPrise.Enabled = true;
             txb_EditKm.Enabled = true;
+            txb_EditPrise.Clear();
+            txb_EditKm.Clear();
+        }
+
+        private void btn_SaveEdit_Click(object sender, EventArgs e)
+        {
+            //Car testbil = Cars.Find(x => x.Id == int.Parse(txb_Id.Text));
+            //MessageBox.Show(testbil.Make);
+
+            Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Price = int.Parse(txb_EditPrise.Text);
+
+            Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Km = int.Parse(txb_EditKm.Text);
+
+            /*
+            foreach (Car sadesala in Cars)
+            {
+                if (int.Parse(txb_Id.Text) == sadesala.Id)
+                {
+                    sadesala.Price = int.Parse(txb_EditPrise.Text);
+                    sadesala.Km = int.Parse(txb_EditKm.Text);
+                }
+            }*/
+
+            txb_EditPrise.Enabled = false;
+            txb_EditKm.Enabled = false;
         }
     }
 }
