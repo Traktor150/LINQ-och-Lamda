@@ -121,6 +121,12 @@ namespace CarsForm2._0
             txb_EditKm.Enabled = true;
             txb_EditPrise.Clear();
             txb_EditKm.Clear();
+            
+            
+            if (txb_Id.Text == "")
+            {
+                MessageBox.Show("ID är inte ifylt");
+            }
         }
 
         private void btn_SaveEdit_Click(object sender, EventArgs e)

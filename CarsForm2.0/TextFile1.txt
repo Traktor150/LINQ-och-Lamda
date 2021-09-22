@@ -4,7 +4,7 @@ Ger error om textboxarna är tomma när man sparar.
 	Kolla om textboxarna är tomma och om dom är sätt markören. 
 
 Ger error om det inte är sifror i textboxarna. 
-	Kan lösa om genom intersept på ingående täcken.
+	Kan lösa om genom intersept på ingående täcken.     Fixat
 
 
 Iritation 
