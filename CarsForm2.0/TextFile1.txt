@@ -20,3 +20,8 @@ Ger error om det inte är sifror i textboxarna.
 
 Iritation 
 Kan ändra texten i combobox. 
+
+
+
+
+Dagens uppgift: Lägga till ny bil och ta bort en bil.

@@ -49,10 +49,7 @@ namespace CarsForm2._0
             Cars.Add(new Car() { Id = 6031, Make = "Audi", Model = "A6", Color = "Blue", Km = 553, Price = 55400, Year = 2011 });
 
             // Skriver ut Visar data
-            foreach (var fiskmas in Cars.OrderBy(x => x.Make))
-            {
-                lib_AllCars.Items.Add(fiskmas);
-            }
+            Update_lists();
 
             // där mer data ska visas 
             lbl_Facts.Text = "Fakta för markerad bil:";
@@ -66,11 +63,8 @@ namespace CarsForm2._0
 
             // Komboboxen
             cmb_Chose.Text = "Välg färj";
-
-            foreach (var Color in Cars.Select(x => x.Color).Distinct())
-            {
-                cmb_Chose.Items.Add(Color);
-            }
+            
+            
 
             // Ändra Data 
             lbl_CarEdit.Text = "Redigera bilfakta";
@@ -81,7 +75,42 @@ namespace CarsForm2._0
             btn_SaveEdit.Text = "Spara";
             txb_EditPrise.Enabled = false;
             txb_EditKm.Enabled = false;
+
+
+            // Lägga till en bil
+            lbl_AddCar.Text = "Legg till en bil";
+            lbl_AddId.Text = "Id:";
+            lbl_AddMake.Text = "Maker";
+            lbl_AddModel.Text = "Modle:";
+            lbl_AddColor.Text = "Färj:";
+            lbl_AddKm.Text = "Km:";
+            lbl_AddPrice.Text = "Pris:";
+            lbl_AddYear.Text = "År:";
+            btn_AddCar.Text = "Lägg till";
+
+
+            // Ta bort en bil
+            lbl_RemoveCar.Text = "Ta bort en bil";
+            lbl_RemoveId.Text = "Id:";
+            btn_RemoveCar.Text = "Ta bort";
+
         }
+
+        public void Update_lists()
+        {
+            lib_AllCars.Items.Clear();
+            foreach (var fiskmas in Cars.OrderBy(x => x.Make))
+            {
+                lib_AllCars.Items.Add(fiskmas);
+            }
+
+            cmb_Chose.Items.Clear();
+            foreach (var Color in Cars.Select(x => x.Color).Distinct())
+            {
+                cmb_Chose.Items.Add(Color);
+            }
+        }
+
 
         private void lib_AllCars_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -131,9 +160,12 @@ namespace CarsForm2._0
 
         private void btn_SaveEdit_Click(object sender, EventArgs e)
         {
-            Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Price = int.Parse(txb_EditPrise.Text);
+            Car EditCar = new Car();
+            EditCar = Cars.Find(x => x.Id == int.Parse(txb_Id.Text));
 
-            Cars.Find(x => x.Id == int.Parse(txb_Id.Text)).Km = int.Parse(txb_EditKm.Text);
+            EditCar.Price = int.Parse(txb_EditPrise.Text);
+
+            EditCar.Km = int.Parse(txb_EditKm.Text);
 
             /*
             foreach (Car sadesala in Cars)
@@ -158,6 +190,35 @@ namespace CarsForm2._0
                     e.Handled = true;
                 }
             }
+        }
+
+        private void btn_AddCar_Click(object sender, EventArgs e)
+        {
+            Cars.Add(new Car() { Id = int.Parse(txb_AddId.Text),
+                Make = txb_AddMake.Text,
+                Model = txb_AddModel.Text,
+                Color = txb_AddColor.Text,
+                Km = int.Parse(txb_AddKm.Text),
+                Price = int.Parse(txb_AddPrice.Text),
+                Year = int.Parse(txb_AddYear.Text) });
+
+            txb_AddId.Clear();
+            txb_AddMake.Clear();
+            txb_AddModel.Clear();
+            txb_AddColor.Clear();
+            txb_AddKm.Clear();
+            txb_AddPrice.Clear();
+            txb_AddYear.Clear();
+
+            Update_lists();
+        }
+
+        private void btn_RemoveCar_Click(object sender, EventArgs e)
+        {
+            Cars.RemoveAt(Cars.FindIndex(x => x.Id == int.Parse(txb_RemoveId.Text)));
+            txb_RemoveId.Clear();
+
+            Update_lists();
         }
     }
 }
