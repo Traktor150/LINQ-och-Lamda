@@ -155,6 +155,7 @@ namespace CarsForm2._0
             // 
             // cmb_Chose
             // 
+            this.cmb_Chose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Chose.FormattingEnabled = true;
             this.cmb_Chose.Location = new System.Drawing.Point(440, 30);
             this.cmb_Chose.Name = "cmb_Chose";

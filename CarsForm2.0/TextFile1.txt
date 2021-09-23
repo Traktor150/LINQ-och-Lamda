@@ -20,7 +20,7 @@ Ger error om det inte är sifror i textboxarna.
 
 Iritation 
 Kan ändra texten i combobox. 
-
+ändra den till en dropdown list
 
 
 

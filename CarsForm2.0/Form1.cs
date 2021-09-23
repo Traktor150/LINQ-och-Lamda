@@ -21,6 +21,10 @@ namespace CarsForm2._0
             txb_Id.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
             txb_EditPrise.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
             txb_EditKm.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_AddId.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_AddKm.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_AddPrice.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
+            txb_AddYear.KeyPress += new KeyPressEventHandler(KeyPress_OnlyNumber);
 
             // Sätter in data
             Cars = new List<Car>();
@@ -135,7 +139,7 @@ namespace CarsForm2._0
 
             lib_ShowCarsOfColor.Items.Clear();
 
-            foreach (var Car in Cars.OrderBy(x => x.Make))
+            foreach (var Car in Cars.OrderBy(x => x.Make).ThenBy(x => x.Model))
             {
                 if (Car.Color == myComboCar)
                 {
@@ -183,26 +187,16 @@ namespace CarsForm2._0
                     if (txb_EditKm.Text != "")
                     {
                         EditCar.Km = int.Parse(txb_EditKm.Text);
-                    } 
+                    }
+
+                    txb_EditPrise.Enabled = false;
+                    txb_EditKm.Enabled = false;
                 }
                 else
                 {
                     txb_Id.Focus();
                 }
             }
-
-            /*
-            foreach (Car sadesala in Cars)
-            {
-                if (int.Parse(txb_Id.Text) == sadesala.Id)
-                {
-                    sadesala.Price = int.Parse(txb_EditPrise.Text);
-                    sadesala.Km = int.Parse(txb_EditKm.Text);
-                }
-            }*/
-
-            txb_EditPrise.Enabled = false;
-            txb_EditKm.Enabled = false;
         }
 
         private void KeyPress_OnlyNumber(object sender, KeyPressEventArgs e)
@@ -247,5 +241,7 @@ namespace CarsForm2._0
 
             Update_lists();
         }
+
+        
     }
 }
