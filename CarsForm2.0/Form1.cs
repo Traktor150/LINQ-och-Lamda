@@ -99,7 +99,7 @@ namespace CarsForm2._0
         public void Update_lists()
         {
             lib_AllCars.Items.Clear();
-            foreach (var fiskmas in Cars.OrderBy(x => x.Make))
+            foreach (var fiskmas in Cars.OrderBy(x => x.Make).ThenBy(x => x.Model))
             {
                 lib_AllCars.Items.Add(fiskmas);
             }
