@@ -63,8 +63,8 @@ namespace CarsForm2._0
 
             // Komboboxen
             cmb_Chose.Text = "Välg färj";
-            
-            
+
+
 
             // Ändra Data 
             lbl_CarEdit.Text = "Redigera bilfakta";
@@ -146,26 +146,50 @@ namespace CarsForm2._0
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            txb_EditPrise.Enabled = true;
-            txb_EditKm.Enabled = true;
-            txb_EditPrise.Clear();
-            txb_EditKm.Clear();
-            
-            
-            //if (txb_Id.Text == "")
-            //{
-            //    MessageBox.Show("ID är inte ifylt");
-            //}
+            if (txb_Id.Text == "")
+            {
+                txb_Id.Focus();
+            }
+            else
+            {
+                txb_EditPrise.Enabled = true;
+                txb_EditKm.Enabled = true;
+                txb_EditPrise.Clear();
+                txb_EditKm.Clear();
+            }
         }
 
         private void btn_SaveEdit_Click(object sender, EventArgs e)
         {
-            Car EditCar = new Car();
-            EditCar = Cars.Find(x => x.Id == int.Parse(txb_Id.Text));
 
-            EditCar.Price = int.Parse(txb_EditPrise.Text);
 
-            EditCar.Km = int.Parse(txb_EditKm.Text);
+            if (txb_Id.Text == "")
+            {
+                txb_Id.Focus();
+            }
+
+            else
+            {
+                if (Cars.Select(x => x.Id).Contains(int.Parse(txb_Id.Text)))
+                {
+                    Car EditCar = new Car();
+                    EditCar = Cars.Find(x => x.Id == int.Parse(txb_Id.Text));
+
+                    if (txb_EditPrise.Text != "")
+                    {
+                        EditCar.Price = int.Parse(txb_EditPrise.Text);
+                    }
+
+                    if (txb_EditKm.Text != "")
+                    {
+                        EditCar.Km = int.Parse(txb_EditKm.Text);
+                    } 
+                }
+                else
+                {
+                    txb_Id.Focus();
+                }
+            }
 
             /*
             foreach (Car sadesala in Cars)
@@ -194,13 +218,16 @@ namespace CarsForm2._0
 
         private void btn_AddCar_Click(object sender, EventArgs e)
         {
-            Cars.Add(new Car() { Id = int.Parse(txb_AddId.Text),
+            Cars.Add(new Car()
+            {
+                Id = int.Parse(txb_AddId.Text),
                 Make = txb_AddMake.Text,
                 Model = txb_AddModel.Text,
                 Color = txb_AddColor.Text,
                 Km = int.Parse(txb_AddKm.Text),
                 Price = int.Parse(txb_AddPrice.Text),
-                Year = int.Parse(txb_AddYear.Text) });
+                Year = int.Parse(txb_AddYear.Text)
+            });
 
             txb_AddId.Clear();
             txb_AddMake.Clear();
