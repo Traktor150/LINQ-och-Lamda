@@ -5,12 +5,12 @@ Ger error om textboxarna är tomma när man sparar.
 
 	Id box
 		När man trycker edit om Id inte är ifylt sätt markören där 
-		Om det fortfarande inte är ifylt när Spara blir trykt så ge en poppup och spara inte
+		Om det fortfarande inte är ifylt när Spara blir trykt så ge en poppup och spara inte      fixat
 
 	Pris box och Km box
-		Om en av dom inte är ifyld så spara bara inteför den som inte är ifyld.
+		Om en av dom inte är ifyld så spara bara inteför den som inte är ifyld.         fixat
 
-Om id man anget inte fins får man ett error medelande. 
+Om id man anget inte finns får man ett error medelande. 
 
 
 

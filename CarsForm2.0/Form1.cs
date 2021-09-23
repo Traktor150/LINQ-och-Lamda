@@ -214,7 +214,7 @@ namespace CarsForm2._0
         {
             Cars.Add(new Car()
             {
-                Id = int.Parse(txb_AddId.Text),
+                Id = Cars.Max(x => x.Id) + 1,
                 Make = txb_AddMake.Text,
                 Model = txb_AddModel.Text,
                 Color = txb_AddColor.Text,
